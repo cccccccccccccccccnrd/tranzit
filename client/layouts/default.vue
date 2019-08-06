@@ -53,6 +53,10 @@ p {
   font-size: 1.5em;
 }
 
+strong {
+  font-weight: 500;
+}
+
 small {
   font-size: 1em;
 }
@@ -68,6 +72,14 @@ h1 {
 h2 {
   margin: 0;
   font-size: 2em;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1em;
   font-weight: normal;
   text-transform: uppercase;
   line-height: 1;
@@ -118,7 +130,7 @@ main {
 
 @media (min-width: 800px) {
   body {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 </style>

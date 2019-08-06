@@ -12,7 +12,8 @@ export default {
   props: ['event'],
   computed: {
     date () {
-      return '8.8.2019 15:00—18:00'
+      const date = new Date(this.event.start)
+      return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() } ${ ('0' + date.getHours()).slice(-2) }:${ ('0' + date.getMinutes()).slice(-2) }`
     }
   }
 }
@@ -27,14 +28,19 @@ a {
 p {
   margin: 0;
   padding: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
   border-top: 2px solid black;
 }
 
 h2 {
   padding: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .event {
+  max-width: 300px;
   margin: 0 1em 0 0;
   background: white;
   border: 2px solid black;
@@ -55,5 +61,15 @@ h2 {
 
 a:last-child .event {
   margin: 0;
+}
+
+@media (min-width: 800px) {
+  .event {
+    max-width: 350px;
+  }
+
+  .event:hover, .event:active {
+    max-width: 1500px;
+  }
 }
 </style>

@@ -3,13 +3,16 @@
     <section v-if="!event[`name_${ $i18n.locale }`]" class="loading invert">
       <p>{{ $t('loading') }}</p>
     </section>
-    <h1>{{ event[`name_${ $i18n.locale }`] }}</h1>
-    <section class="info">
-      <small><span class="type">{{ event.type }}</span> — {{ date }} until {{ date }}</small>
-    </section>
-    <p class="description">{{ event[`description_${ $i18n.locale }`] }}</p>
+    <h2>{{ event[`name_${ $i18n.locale }`] }}</h2>
+    <small class="info">
+      @{{ date }} until {{ date }} part of <span class="type">{{ event[`type_${ $i18n.locale }`] }}</span>
+    </small>
+    <vue-markdown
+      class="description"
+      :source="event[`description_${ $i18n.locale }`]"
+    />
     <img
-      v-for="visual in event.visuals"
+      v-for="visual in event.media"
       :key="visual.id"
       :src="src(visual.url)"
     />
@@ -17,15 +20,20 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
+
 import Strapi from 'strapi-sdk-javascript/build/main'
 const url = process.env.API_URL || 'http://localhost:1337'
 const strapi = new Strapi(url)
 
 export default {
+  components: {
+    VueMarkdown
+  },
   computed: {
     date() {
-      const date = new Date(this.event.from)
-      return `${ date.getDay() } ${ new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date) } ${ date.getFullYear() }`
+      const date = new Date(this.event.start)
+      return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() } ${ ('0' + date.getHours()).slice(-2) }:${ ('0' + date.getMinutes()).slice(-2) }`
     }
   },
   methods: {
@@ -37,13 +45,13 @@ export default {
     const response = await strapi.request('post', '/graphql', {
       data: {
         query: `query {
-          event(id: ${ params.id }) {
+          event(id: "${ params.id }") {
             name_${ params.lang }
             description_${ params.lang }
-            type
-            from
-            to
-            visuals {
+            type_${ params.lang }
+            start
+            end
+            media {
               id
               url
             }
@@ -62,32 +70,19 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  word-break: break-all;
+small {
+  text-transform: uppercase;
+  display: inline-block;
 }
 
 .info {
-  width: fit-content;
-  margin: 1em 0 0 0;
-  padding: 0.5em;
-  border: 2px solid black;
+  margin: 1em 0 2em 0;
 }
+</style>
 
-/* .info {
-  display: flex;
-  justify-content: center;
-  margin: 1em 0 0 0;
-  padding: 0.5em 1em;
-  border-radius: 100px;
-  box-shadow: 5px 5px 10px blue;
-} */
-
-.info p {
-  margin: 0;
-}
-
-.type {
-  text-transform: capitalize;
+<style>
+.description h2 {
+  margin: 0 0 -0.5em 0;
 }
 </style>
 

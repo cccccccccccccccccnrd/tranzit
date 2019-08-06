@@ -1,0 +1,65 @@
+{
+  "connection": "default",
+  "collectionName": "event",
+  "info": {
+    "name": "event",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "name_en": {
+      "required": true,
+      "type": "string"
+    },
+    "name_ro": {
+      "required": true,
+      "type": "string"
+    },
+    "name_hu": {
+      "required": true,
+      "type": "string"
+    },
+    "type_en": {
+      "required": true,
+      "type": "string"
+    },
+    "type_ro": {
+      "required": true,
+      "type": "string"
+    },
+    "type_hu": {
+      "required": true,
+      "type": "string"
+    },
+    "description_en": {
+      "required": true,
+      "type": "text"
+    },
+    "description_ro": {
+      "required": true,
+      "type": "text"
+    },
+    "description_hu": {
+      "required": true,
+      "type": "text"
+    },
+    "start": {
+      "required": true,
+      "type": "date"
+    },
+    "end": {
+      "required": true,
+      "type": "date"
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

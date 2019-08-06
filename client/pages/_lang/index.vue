@@ -84,9 +84,9 @@ export default {
             id
             name_${ params.lang }
             description_${ params.lang }
-            type
-            to
-            from
+            type_${ params.lang }
+            start
+            end
           }
         }`
       }
