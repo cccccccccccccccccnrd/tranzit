@@ -61,5 +61,8 @@ module.exports = {
         })
       }
     }
+  },
+  server: {
+    port: 6000
   }
 }
