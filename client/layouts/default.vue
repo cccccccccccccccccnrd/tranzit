@@ -26,8 +26,8 @@ export default {
 /* global styles */
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 2px;
+  height: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -43,6 +43,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -120,6 +121,7 @@ main {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,7 +132,7 @@ main {
 
 @media (min-width: 800px) {
   body {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 </style>

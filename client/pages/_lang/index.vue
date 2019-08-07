@@ -12,13 +12,22 @@
     <section
       class="scroll-area"
     >
-      <area-about/>
+      <area-heading
+        site="about"
+      />
     </section>
     <section
-      class="scroll-area"
+      class="scroll-area invert baseline"
     >
       <area-events
         :events="this.filteredList"
+      />
+    </section>
+    <section
+      class="scroll-area invert"
+    >
+      <area-heading
+        site="hungarianFilmDays"
       />
     </section>
   </div>
@@ -26,7 +35,7 @@
 
 <script>
 import AreaVisual from '@/components/AreaVisual.vue'
-import AreaAbout from '@/components/AreaAbout.vue'
+import AreaHeading from '@/components/AreaHeading.vue'
 import AreaEvents from '@/components/AreaEvents.vue'
 
 import Strapi from 'strapi-sdk-javascript/build/main'
@@ -36,7 +45,7 @@ const strapi = new Strapi(url)
 export default {
   components: {
     AreaVisual,
-    AreaAbout,
+    AreaHeading,
     AreaEvents
   },
   data () {
@@ -58,8 +67,8 @@ export default {
 
     let offset = 1
     let reverse = false
-    const interval = setInterval(() => {
-      if (offset === width || offset === 0) {
+    this.interval = setInterval(() => {
+      if (offset >= width || offset <= 0) {
         reverse = !reverse
       }
 
@@ -70,21 +79,26 @@ export default {
       }
 
       areaVisual.scrollLeft = offset
-    }, 15)
+    }, 24)
 
     areaVisual.addEventListener('mouseover', () => {
-      clearInterval(interval)
+      clearInterval(this.interval)
     })
   },
   async asyncData ({ params }) {
+    const date = new Date()
+    date.setDate(date.getDate() - 2)
+
     const response = await strapi.request('post', '/graphql', {
       data: {
         query: `query {
-          events {
+          events(limit: 2, sort: "start:asc", where: { 
+  	        start_gte: "${ date.toISOString() }"
+          }) {
             id
             name_${ params.lang }
-            description_${ params.lang }
             type_${ params.lang }
+            description_${ params.lang }
             start
             end
           }
@@ -107,10 +121,19 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  height: calc(100vh / 3);
+  height: calc(100vh / 6);
+  background: white;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+.scroll-area:nth-of-type(1) {
+  height: calc(100vh / 2);
+}
+
+.baseline {
+  align-items: baseline;
 }
 </style>
 

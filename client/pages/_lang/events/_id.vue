@@ -5,7 +5,7 @@
     </section>
     <h2>{{ event[`name_${ $i18n.locale }`] }}</h2>
     <small class="info">
-      @{{ date }} until {{ date }} part of <span class="type">{{ event[`type_${ $i18n.locale }`] }}</span>
+      <span class="type">{{ event[`type_${ $i18n.locale }`] }}</span>—{{ date }}
     </small>
     <vue-markdown
       class="description"
@@ -21,8 +21,8 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-
 import Strapi from 'strapi-sdk-javascript/build/main'
+
 const url = process.env.API_URL || 'http://localhost:1337'
 const strapi = new Strapi(url)
 
@@ -31,9 +31,13 @@ export default {
     VueMarkdown
   },
   computed: {
-    date() {
+    date () {
       const date = new Date(this.event.start)
-      return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() } ${ ('0' + date.getHours()).slice(-2) }:${ ('0' + date.getMinutes()).slice(-2) }`
+      if (date.getHours() === 0 && date.getMinutes() === 0) {
+        return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() }`
+      } else {
+        return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() } ${ ('0' + date.getHours()).slice(-2) }:${ ('0' + date.getMinutes()).slice(-2) }`
+      }
     }
   },
   methods: {
@@ -83,6 +87,7 @@ small {
 <style>
 .description h2 {
   margin: 0 0 -0.5em 0;
+  text-transform: initial;
 }
 </style>
 

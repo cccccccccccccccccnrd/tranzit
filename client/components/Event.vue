@@ -1,8 +1,12 @@
 <template>
   <nuxt-link :to="$i18n.path(`events/${ this.event.id }`)">
     <div class="event">
-      <h2>{{ this.event[`name_${ $i18n.locale }`] }}</h2>
-      <p>{{ this.date }}</p>
+      <section>
+        <small>{{ this.event[`name_${ $i18n.locale }`] }}</small>
+      </section>
+      <section>
+        <p>{{ this.date }}</p><p>↗</p>
+      </section>
     </div>
   </nuxt-link>
 </template>
@@ -13,7 +17,11 @@ export default {
   computed: {
     date () {
       const date = new Date(this.event.start)
-      return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() } ${ ('0' + date.getHours()).slice(-2) }:${ ('0' + date.getMinutes()).slice(-2) }`
+      if (date.getHours() === 0 && date.getMinutes() === 0) {
+        return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() }`
+      } else {
+        return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() } ${ ('0' + date.getHours()).slice(-2) }:${ ('0' + date.getMinutes()).slice(-2) }`
+      }
     }
   }
 }
@@ -30,7 +38,14 @@ p {
   padding: 0.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
-  border-top: 2px solid black;
+}
+
+small {
+  display: block;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 h2 {
@@ -40,11 +55,16 @@ h2 {
 }
 
 .event {
-  max-width: 300px;
+  max-width: 80vw;
   margin: 0 1em 0 0;
-  background: white;
   border: 2px solid black;
   transition: all 500ms;
+}
+
+section:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid black;
 }
 
 /* .event {
@@ -65,11 +85,11 @@ a:last-child .event {
 
 @media (min-width: 800px) {
   .event {
-    max-width: 350px;
+    max-width: 400px;
   }
 
   .event:hover, .event:active {
-    max-width: 1500px;
+    max-width: 800px;
   }
 }
 </style>

@@ -1,18 +1,21 @@
 <template>
   <div class="area-visual">
-    <img src="@/assets/tranzit.jpg">
+    <img src="@/assets/history5.jpg">
+    <img src="@/assets/history4.jpg">
+    <img src="@/assets/history6.jpg">
+    <img src="@/assets/history.jpg">
+    <img src="@/assets/history2.jpg">
+    <img src="@/assets/history3.jpg">
   </div>
 </template>
 
-<script>
-export default {
-}
-</script>
-
-
 <style scoped>
-  img {
-    max-width: initial;
-    width: 200vw;
-  }
+.area-visual {
+  display: flex;
+}
+
+img {
+  max-width: initial;
+  height: calc(100vh / 2);
+}
 </style>
