@@ -5,7 +5,7 @@
   "description": "tranzit house website server",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "NODE_ENV=production strapi start",
     "build": "strapi build",
     "strapi": "strapi",
     "lint": "eslint ."
@@ -32,7 +32,7 @@
     "strapi-utils": "3.0.0-beta.14"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "cnrd"
   },
   "strapi": {
     "uuid": "fa6f06c3-0a59-48df-a1ea-9f9c9e179426"
