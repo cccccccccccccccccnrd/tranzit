@@ -1,5 +1,6 @@
 export default function ({ isHMR, app, store, route, params, error, redirect }) {
   if (isHMR) { return }
+  console.log('ahllo')
 
   const defaultLocale = app.i18n.fallbackLocale
   const locales = store.getters['lang/locales']
