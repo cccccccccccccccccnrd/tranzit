@@ -30,6 +30,10 @@ module.exports = {
     middleware: 'i18n'
   },
 
+  env: {
+    API_URL: 'http://46.232.250.62:1337'
+  },
+
   /*
   ** Plugins to load before mounting the App
   */
