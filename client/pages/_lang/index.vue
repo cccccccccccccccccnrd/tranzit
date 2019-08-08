@@ -67,8 +67,9 @@ export default {
 
     let offset = 1
     let reverse = false
+
     this.interval = setInterval(() => {
-      if (offset >= width || offset <= 0) {
+      if (offset === width || offset === 0) {
         reverse = !reverse
       }
 
@@ -83,6 +84,8 @@ export default {
 
     areaVisual.addEventListener('mouseover', () => {
       clearInterval(this.interval)
+    }, {
+      once: true
     })
   },
   async asyncData ({ params }) {
