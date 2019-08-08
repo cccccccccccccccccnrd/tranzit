@@ -1,5 +1,5 @@
 {
-  "host": "translation-of-computation.com/api",
+  "host": "localhost",
   "port": "${process.env.PORT || 1337}",
   "production": true,
   "proxy": {
