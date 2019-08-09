@@ -130,9 +130,5 @@ main {
   background: white;
 }
 
-@media (min-width: 800px) {
-  body {
-    font-size: 20px;
-  }
-}
+@media (min-width: 800px) {}
 </style>
