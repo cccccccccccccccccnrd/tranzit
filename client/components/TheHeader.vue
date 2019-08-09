@@ -6,6 +6,7 @@
         text="true"
       />
     </nuxt-link>
+    :-)
     <nav>
       <nuxt-link :to="`/${ locales[0] }${$route.fullPath.replace(/^\/[^\/]+/, '')}`">{{ locales[0] }}</nuxt-link>
       <nuxt-link :to="`/${ locales[1] }${$route.fullPath.replace(/^\/[^\/]+/, '')}`">{{ locales[1] }}</nuxt-link>
