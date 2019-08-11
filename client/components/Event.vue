@@ -83,6 +83,12 @@ a:last-child .event {
   margin: 0;
 }
 
+@media (max-width: 325px) {
+  p {
+    font-size: 1em;
+  }
+}
+
 @media (min-width: 800px) {
   .event {
     max-width: 400px;
