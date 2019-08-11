@@ -31,7 +31,7 @@ module.exports = {
   },
 
   env: {
-    API_URL: 'http://tranzit-backend.cnrd.computer'
+    API_URL: 'https://tranzit-backend.cnrd.computer'
   },
 
   /*
