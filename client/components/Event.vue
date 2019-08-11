@@ -75,10 +75,6 @@ section:nth-of-type(2) {
   box-shadow: 1em 10px 20px blue;
 } */
 
-.event:hover, .event:active {
-  transform: translateY(5px);
-}
-
 a:last-child .event {
   margin: 0;
 }
@@ -96,6 +92,7 @@ a:last-child .event {
 
   .event:hover, .event:active {
     max-width: 800px;
+    transform: translateY(5px);
   }
 }
 </style>
