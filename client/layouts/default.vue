@@ -143,9 +143,15 @@ main {
   background: white;
 }
 
+@media (max-width: 325px) {
+  body {
+    font-size: 12px;
+  }
+}
+
 @media (min-width: 800px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 </style>
