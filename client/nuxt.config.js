@@ -31,7 +31,7 @@ module.exports = {
   },
 
   env: {
-    API_URL: 'http://46.232.250.62:1337'
+    API_URL: 'http://tranzithouse.ro/api'
   },
 
   /*
