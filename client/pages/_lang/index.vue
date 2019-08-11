@@ -17,7 +17,7 @@
       />
     </section>
     <section
-      class="scroll-area invert baseline"
+      class="scroll-area invert"
     >
       <area-events
         :events="this.filteredList"
@@ -124,8 +124,8 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  height: calc(100vh / 6);
-  height: calc(var(--vh, 1vh) * 100 / 6);
+  /* height: calc(100vh / 6); */
+  height: calc(var(--vh) * 100 / 6);
   background: white;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -133,8 +133,8 @@ export default {
 }
 
 .scroll-area:nth-of-type(1) {
-  height: calc(100vh / 2);
-  height: calc(var(--vh, 1vh) * 100 / 2);
+  /* height: calc(100vh / 2); */
+  height: calc(var(--vh) * 100 / 2);
 }
 
 .baseline {
