@@ -20,8 +20,17 @@ export default {
     }
   },
   mounted () {
-    const vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty('--vh', `${ vh }px`)
+    this.setVh()
+
+    window.addEventListener('resize', () => {
+      this.setVh()
+    })
+  },
+  methods: {
+    setVh: function () {
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${ vh }px`)
+    }
   }
 }
 </script>
@@ -41,7 +50,7 @@ export default {
 html {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 15px;
+  font-size: 13px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -134,5 +143,9 @@ main {
   background: white;
 }
 
-@media (min-width: 800px) {}
+@media (min-width: 800px) {
+  body {
+    font-size: 16px;
+  }
+}
 </style>
