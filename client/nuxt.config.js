@@ -31,7 +31,7 @@ module.exports = {
   },
 
   env: {
-    API_URL: 'http://tranzithouse.ro/api'
+    API_URL: 'https://tranzit-backend.cnrd.computer'
   },
 
   /*
