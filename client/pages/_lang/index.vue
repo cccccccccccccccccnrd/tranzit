@@ -5,7 +5,7 @@
     </section>
     <section
       class="scroll-area"
-      ref="areaVisual"
+      ref="scrollVisual"
     >
       <area-visual/>
     </section>
@@ -18,9 +18,11 @@
     </section>
     <section
       class="scroll-area invert"
+      ref="scrollEvents"
     >
       <area-events
         :events="this.filteredList"
+        ref="areaEvents"
       />
     </section>
     <section
@@ -39,7 +41,7 @@ import AreaHeading from '@/components/AreaHeading.vue'
 import AreaEvents from '@/components/AreaEvents.vue'
 
 import Strapi from 'strapi-sdk-javascript/build/main'
-const url = process.env.API_URL || 'http://localhost:1337'
+const url = /* process.env.API_URL || */ 'http://localhost:1337'
 const strapi = new Strapi(url)
 
 export default {
@@ -62,14 +64,19 @@ export default {
     }
   },
   mounted () {
-    const areaVisual = this.$refs.areaVisual
-    const width = areaVisual.scrollWidth - areaVisual.clientWidth
+    const now = new Date()
+    const closest = this.events.filter((event, index) => new Date(event.start) > now)[0]
+    const index = this.events.indexOf(closest)
+    console.log(closest, index)
+    this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.children[index].offsetLeft - 13
+
+    const visualWidth = this.$refs.scrollVisual.scrollWidth - this.$refs.scrollVisual.clientWidth
 
     let offset = 1
     let reverse = false
 
-    this.interval = setInterval(() => {
-      if (offset === width || offset === 0) {
+    const interval = setInterval(() => {
+      if (offset === visualWidth || offset === 0) {
         reverse = !reverse
       }
 
@@ -79,11 +86,11 @@ export default {
         offset++
       }
 
-      areaVisual.scrollLeft = offset
+      this.$refs.scrollVisual.scrollLeft = offset
     }, 24)
 
-    areaVisual.addEventListener('mouseover', () => {
-      clearInterval(this.interval)
+    this.$refs.scrollVisual.addEventListener('mouseover', () => {
+      clearInterval(interval)
     }, {
       once: true
     })
@@ -95,7 +102,7 @@ export default {
     const response = await strapi.request('post', '/graphql', {
       data: {
         query: `query {
-          events(limit: 2, sort: "start:asc", where: { 
+          events(limit: 20, sort: "start:asc", where: { 
   	        start_gte: "${ date.toISOString() }"
           }) {
             id

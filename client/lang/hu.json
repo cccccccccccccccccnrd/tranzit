@@ -2,6 +2,7 @@
   "tranzit": "Tranzit Ház",
   "about": {
     "title": "A tranzit házról",
+    "p": "The TRANZIT PROJECT was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality.",
     "sections": [{
       "heading": "Tranzit foundation",
       "p": "The Tranzit foundation was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality."
@@ -12,12 +13,13 @@
   },
   "hungarianFilmDays": {
     "title": "A Kolozsvári Magyar Filmnapokról",
+    "p": "10 éves a Kolozsvári Magyar Filmnapok. Jubileumi kiadás, retrospektív válogatások. 2019. augusztus 18-23. <br><br> Kolozsvári vonatkozású filmek szemléje minden műfajban, a játékfilmtől az animációs filmig, minden korszakban, a némafilmgyártástól a jelenig, kolozsvári alkotók és műhelyek filmjei Kolozsvárról és a nagyvilágról, Kolozsvár és a kolozsváriak a nagyvilág alkotóinak filmjeiben.",
     "sections": [{
-      "heading": "Hungarian Film Days",
-      "p": "The Tranzit foundation was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality."
-    },{
-      "heading": "History",
-      "p": "The Tranzit foundation was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality."
+      "heading": "További információk",
+      "p": "<a href='http://www.facebook.com/tranzith'>www.facebook.com/tranzith</a> <br> <a href='http://www.magyarnapok.ro'>www.magyarnapok.ro</a>"
+    }, {
+      "heading": "Csapat",
+      "p": "<strong>Szervező:</strong> Tranzit Alapítvány <br> <strong>Partnerek:</strong> Babeș-Bolyai Tudományegyetem – Színházművészeti és Film Kar, Filmtett, EMKISZ, Kolozsvári Televízió – TVR Cluj, Minimum Party, Sapientia Erdélyi Magyar Tudományegyetem, Video Pontes, 50 éves a bukaresti Magyar Adás <br> <strong>Támogatók:</strong> AFCN, Bethlen Gábor Alapkezelő Zrt, Communitas Alapítvány <br><br> <strong>Kurátor:</strong> Könczei Csilla <br> <strong>Művészeti tanácsadó:</strong> Schneider Tibor <br> <strong>Szervezőcsapat:</strong> Csiki Réka, Emil Florea, Gondos Emőke, Magyari Noémi, Lorand Maxim, Schneider Bence, Seprődi Attila <br> <strong>Házigazdák/moderátorok:</strong> Csiki Réka, Gondos Emőke, Molnár Péter, Seprődi Attila <br><br> <strong>Helyszín:</strong> Tranzit Ház, Nagyterem, Stúdió, Tranzit udvar (Barițiu/Malom u. 16., bejárat a Névtelen utcáról) <br><br> Esős időben a nagyteremben vetítünk. A Tranzit Alapítvány fenntartja a műsorváltoztatás jogát. A belépés ingyenes."
     }]
   },
   "error": "Az oldal nem található",

@@ -130,6 +130,14 @@ main {
   padding: 1em;
 }
 
+.single a {
+  border-bottom: 2px solid black;
+}
+
+.single a:hover {
+  border-bottom: none;
+}
+
 .loading {
   position: fixed;
   top: 0;

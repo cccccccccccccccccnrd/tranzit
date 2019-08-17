@@ -55,7 +55,8 @@ h2 {
 }
 
 .event {
-  max-width: 80vw;
+  min-width: 300px;
+  max-width: 300px;
   margin: 0 1em 0 0;
   border: 2px solid black;
   transition: all 500ms;
@@ -86,10 +87,6 @@ a:last-child .event {
 }
 
 @media (min-width: 800px) {
-  .event {
-    max-width: 400px;
-  }
-
   .event:hover, .event:active {
     max-width: 800px;
     transform: translateY(5px);

@@ -2,6 +2,7 @@
   "tranzit": "Tranzit House",
   "about": {
     "title": "About Tranzit House",
+    "p": "The TRANZIT PROJECT was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality.",
     "sections": [{
       "heading": "Tranzit foundation",
       "p": "The Tranzit foundation was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality."
@@ -12,12 +13,13 @@
   },
   "hungarianFilmDays": {
     "title": "About Hungarian Film Days in Cluj",
+    "p": "Film Days Related to Cluj, 10th edition. Anniversary edition, retrospective film selection. 18-23 August 2019 <br><br> A review of films related to Cluj in all genres, from feature films to animations, from all periods, from the silent film era until the present. Films by authors and film studios from Cluj, films about Cluj and its inhabitants from all over the world.",
     "sections": [{
-      "heading": "Hungarian Film Days",
-      "p": "The Tranzit foundation was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality."
-    },{
-      "heading": "History :-)",
-      "p": "The Tranzit foundation was born in 1997 as the consequence of the need of filling the social-cultural void in the city. From this point of view maybe the project started in a slightly utopian way. During the last five years parts of the initial vision have become reality."
+      "heading": "More information",
+      "p": "<a href='http://www.facebook.com/tranzith'>www.facebook.com/tranzith</a> <br> <a href='http://www.magyarnapok.ro'>www.magyarnapok.ro</a>"
+    }, {
+      "heading": "Team",
+      "p": "<strong>Organizer:</strong> Tranzit Foundation <br> <strong>Partners:</strong> Filmtett Association, Minimum Party, Sapientia University Department of Film, Photography and Media, BBU Cluj, Department of Theater and Film, Video Pontes, EMKISZ, 50 years of Hungarian emission on TVR <br> <strong>Finantial support:</strong> Bethlen Gábor Alapkezelő Zrt, Communitas Foundation, AFCN <br><br> <strong>Curator:</strong> Könczei Csilla <br> <strong>Artistic consultant:</strong> Schneider Tibor <br> <strong>Organizing team:</strong> Csiki Réka, Emil Florea, Gondos Emőke, Magyari Noémi, Lorand Maxim, Schneider Bence, Seprődi Attila <br> <strong>Moderators:</strong> Csiki Réka, Gondos Emőke, Molnár Péter, Seprődi Attila <br> <strong>Location:</strong> Tranzit House, Main Hall / Studio / Tranzit Courtyard - Barițiu street no. 16., entrance through the Nameless Street. <br><br> In case of rain the projections from the courtyard will be moved indoors. Tranzit House reserves the right for modifying the program. The entry for all the projections is free."
     }]
   },
   "error": "Page not found",
