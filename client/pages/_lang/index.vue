@@ -85,7 +85,7 @@ export default {
         offset++
       }
 
-      this.$refs.scrollVisual.scrollLeft = offset
+      if (this.$refs.scrollVisual) this.$refs.scrollVisual.scrollLeft = offset
     }, 24)
 
     this.$refs.scrollVisual.addEventListener('mouseover', () => {
