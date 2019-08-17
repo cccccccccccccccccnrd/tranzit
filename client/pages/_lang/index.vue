@@ -67,8 +67,7 @@ export default {
     const now = new Date()
     const closest = this.events.filter((event, index) => new Date(event.start) > now)[0]
     const index = this.events.indexOf(closest)
-
-    this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.children[index].offsetLeft - 13
+    if (this.$refs.scrollEvents) this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.children[index].offsetLeft - 13
 
     const visualWidth = this.$refs.scrollVisual.scrollWidth - this.$refs.scrollVisual.clientWidth
 
