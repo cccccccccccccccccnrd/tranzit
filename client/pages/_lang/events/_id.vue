@@ -5,7 +5,7 @@
     </section>
     <h2>{{ event[`name_${ $i18n.locale }`] }}</h2>
     <small class="info">
-      <span class="type">{{ event[`type_${ $i18n.locale }`] }}</span>—{{ date }}
+      <span class="type">{{ event[`type_${ $i18n.locale }`] }}</span> — {{ date }}
     </small>
     <vue-markdown
       class="description"
