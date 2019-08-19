@@ -68,7 +68,7 @@ export default {
     now.setHours(now.getHours() - 2)
     const closest = this.events.filter((event, index) => new Date(event.start) > now)[0]
     const index = this.events.indexOf(closest)
-    
+
     if (this.$refs.scrollEvents) this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.children[index].offsetLeft - 13
 
     const visualWidth = this.$refs.scrollVisual.scrollWidth - this.$refs.scrollVisual.clientWidth
@@ -90,7 +90,7 @@ export default {
       if (this.$refs.scrollVisual) this.$refs.scrollVisual.scrollLeft = offset
     }, 24)
 
-    this.$refs.scrollVisual.addEventListener('mouseover', () => {
+    this.$refs.scrollVisual.addEventListener('mousedown', () => {
       clearInterval(interval)
     }, {
       once: true
