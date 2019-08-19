@@ -90,7 +90,7 @@ export default {
       if (this.$refs.scrollVisual) this.$refs.scrollVisual.scrollLeft = offset
     }, 24)
 
-    this.$refs.scrollVisual.addEventListener('mousedown', () => {
+    this.$refs.scrollVisual.addEventListener('mouseover', () => {
       clearInterval(interval)
     }, {
       once: true
