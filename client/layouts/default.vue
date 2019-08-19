@@ -61,6 +61,8 @@ html {
 
 body {
   margin: 0;
+  scrollbar-width: 2px;
+  scrollbar-color: black;
 }
 
 p {
