@@ -1,5 +1,5 @@
 <template>
-  <div class="single single-about indent">
+  <div class="single single-hungarian-film-days indent">
     <h1>{{ $t('hungarianFilmDays.title') }}</h1>
     <p v-html="$t('hungarianFilmDays.p')"></p>
     <section

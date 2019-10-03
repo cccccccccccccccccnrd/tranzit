@@ -28,6 +28,10 @@
       "p": "<strong>Organizator:</strong> Fundația Tranzit <br> <strong>Parteneri:</strong> Asociația Filmtett, Minimum Party, Universitatea Sapientia - Specializarea film, foto, media, EMKISZ, TVR Cluj, UBB Cluj, Facultatea de Teatru si Film, Video Pontes, 50 de ani de Emisiunea în limba maghiară în TVR <br> <strong>Finanțatori:</strong> AFCN, Bethlen Gábor Alapkezelő Zrt, Fundația Communitas <br><br> <strong>Curator:</strong> Könczei Csilla <br> <strong>Consilier artistic:</strong> Schneider Tibor <br> <strong>Echipa de organizare:</strong> Csiki Réka, Emil Florea, Gondos Emőke, Magyari Noémi, Lorand Maxim, Schneider Bence, Seprődi Attila <br> <strong>Gazdele evenimentului/moderatori:</strong> Csiki Réka, Gondos Emőke, Molnár Péter, Seprődi Attila <br> <strong>Locații:</strong> Casa Tranzit, Sala Mare / sala studio / Curtea Tranzit - str. Barițiu 16., intrarea de pe strada Fără Nume <br><br> În caz de ploaie proiecțiile din curte se vor muta în Sala Mare. Casa Tranzit îşi reţine dreptul de a modifica programul. Intrarea este liberă."
     }]
   },
+  "contact": {
+    "title": "Contact",
+    "p": "<strong>Adresa:</strong> Strada Barițiu, nr. 16, Cluj-Napoca, România, 400027 <br> <strong>Telefon:</strong> <a href='tel:+40737520854'>+40 737 520 854</a> <br> <strong>Adresa de mail:</strong> <a href='mailto:tranzit.foundation@gmail.com'>tranzit.foundation@gmail.com</a> <br> <strong>Facebook:</strong> <a href='http://www.facebook.com/tranzith'>www.facebook.com/tranzith</a>"
+  },
   "error": "Pagina nu este găsită",
   "loading": "Încărcare..."
 }

@@ -29,7 +29,7 @@
       class="scroll-area invert"
     >
       <area-heading
-        site="hungarianFilmDays"
+        site="contact"
       />
     </section>
   </div>
