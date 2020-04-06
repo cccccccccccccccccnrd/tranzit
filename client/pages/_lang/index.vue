@@ -71,15 +71,6 @@ export default {
     }
   },
   mounted () {
-    /* const now = new Date()
-    now.setHours(now.getHours() - 2)
-    const closest = this.events.filter((event, index) => new Date(event.start) > now)[0]
-    const index = this.events.indexOf(closest)
-
-    if (this.events.length > 0) {
-      if (this.$refs.scrollEvents) this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.children[index].offsetLeft - 13
-    } */
-
     if (this.events.length > 0) {
       if (this.$refs.scrollEvents) this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.clientWidth
     }
@@ -110,9 +101,6 @@ export default {
     })
   },
   async asyncData ({ params }) {
-    const date = new Date()
-    date.setDate(date.getDate() - 2)
-
     const response = await strapi.request('post', '/graphql', {
       data: {
         query: `query {
