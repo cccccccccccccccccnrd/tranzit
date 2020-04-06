@@ -39,8 +39,7 @@ export default {
 /* global styles */
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 2px;
-  height: 2px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -71,8 +71,8 @@ export default {
     }
   },
   mounted () {
-    if (this.events.length > 0) {
-      if (this.$refs.scrollEvents) this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.clientWidth
+    if (this.events.length > 0 && this.$refs.scrollEvents) {
+      this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.clientWidth
     }
 
     const visualWidth = this.$refs.scrollVisual.scrollWidth - this.$refs.scrollVisual.clientWidth
