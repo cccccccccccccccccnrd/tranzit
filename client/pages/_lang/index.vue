@@ -62,7 +62,7 @@ export default {
       } else {
         return false
       }
-    }, 
+    },
     filteredList() {
       /* return this.restaurants.filter(restaurant => {
         return restaurant.name.toLowerCase().includes(this.query.toLowerCase())
@@ -71,13 +71,17 @@ export default {
     }
   },
   mounted () {
-    const now = new Date()
+    /* const now = new Date()
     now.setHours(now.getHours() - 2)
     const closest = this.events.filter((event, index) => new Date(event.start) > now)[0]
     const index = this.events.indexOf(closest)
 
     if (this.events.length > 0) {
       if (this.$refs.scrollEvents) this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.children[index].offsetLeft - 13
+    } */
+
+    if (this.events.length > 0) {
+      if (this.$refs.scrollEvents) this.$refs.scrollEvents.scrollLeft = this.$refs.areaEvents.$el.clientWidth
     }
 
     const visualWidth = this.$refs.scrollVisual.scrollWidth - this.$refs.scrollVisual.clientWidth
@@ -112,9 +116,7 @@ export default {
     const response = await strapi.request('post', '/graphql', {
       data: {
         query: `query {
-          events(limit: 20, sort: "start:asc", where: { 
-  	        start_gte: "${ date.toISOString() }"
-          }) {
+          events(limit: 20, sort: "start:desc") {
             id
             name_${ params.lang }
             type_${ params.lang }
@@ -129,7 +131,7 @@ export default {
     await new Promise(resolve => setTimeout(resolve, 300))
 
     return {
-      events: response.data.events
+      events: response.data.events.reverse()
     }
   }
 }
