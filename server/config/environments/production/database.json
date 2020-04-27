@@ -8,8 +8,8 @@
         "port": 27017,
         "srv": "false",
         "database": "tranzit",
-        "username": "",
-        "password": "",
+        "username": "${process.env.DB_USERNAME || ''}",
+        "password": "${process.env.DB_PASSWORD || ''}",
         "ssl": "false",
         "client": "mongo"
       },
