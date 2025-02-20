@@ -5,7 +5,9 @@
         <small>{{ this.event[`name_${$i18n.locale}`] }}</small>
       </section>
       <section>
-        <p v-if="this.event.type_en.startsWith('RomaRise')">2024–2026</p>
+        <p v-if="this.event.[`type_${$i18n.locale}`].startsWith('Roma')">
+          2024–2026
+        </p>
         <p v-else>{{ this.date }}</p>
         <p>↗</p>
       </section>

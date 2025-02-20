@@ -1,22 +1,18 @@
 <template>
   <div class="area-events">
-    <event
-      v-for="event in events"
-      :key="event.id"
-      :event="event"
-    />
+    <event v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
 
 <script>
-import Event from '@/components/Event.vue'
+import Event from "@/components/Event.vue";
 
 export default {
   components: {
     Event
   },
-  props: ['events']
-}
+  props: ["events"]
+};
 </script>
 
 <style scoped>
