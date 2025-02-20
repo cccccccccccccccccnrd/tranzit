@@ -1,35 +1,43 @@
 <template>
-  <header :class="{ invert: !isIndex }">
-    <nuxt-link :to="$i18n.path('')">
+  <header class="border">
+    <nuxt-link
+      :to="$i18n.path('')"
+    >
       <logo
         color="black"
         text="true"
       />
     </nuxt-link>
     <nav>
-      <nuxt-link :to="`/${ locales[0] }${$route.fullPath.replace(/^\/[^\/]+/, '')}`">{{ locales[0] }}</nuxt-link>
-      <nuxt-link :to="`/${ locales[1] }${$route.fullPath.replace(/^\/[^\/]+/, '')}`">{{ locales[1] }}</nuxt-link>
-      <nuxt-link :to="`/${ locales[2] }${$route.fullPath.replace(/^\/[^\/]+/, '')}`">{{ locales[2] }}</nuxt-link>
+      <span
+        @click="toggleMenu"
+        class="cursor-pointer"
+      >{{ $t('ui.menu').toUpperCase() }}</span>
     </nav>
   </header>
 </template>
 
 <script>
 import Logo from '@/components/Logo.vue'
+import { mapMutations } from 'vuex'
 
 export default {
   components: {
     Logo
   },
   data () {
-    return {
-      locales: this.$store.getters['lang/locales']
-    }
+    return {}
   },
   computed: {
     isIndex: function () {
       return this.$route.name === 'lang'
     }
+  },
+  methods: {
+    ...mapMutations({
+      toggleMenu: 'menu/toggle',
+      closeMenu: 'menu/close'
+    })
   }
 }
 </script>
@@ -37,17 +45,15 @@ export default {
 
 <style scoped>
 header {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1em;
-  background: white;
+  height: 5vh;
+  padding: 0 calc(5vh / 2.5);
   z-index: 5;
-  transition: all 500ms ease-in-out;
+  border-bottom: 1px solid transparent;
+  /* transition: all 500ms ease-in-out; */
 }
 
 nav a {
@@ -55,6 +61,10 @@ nav a {
   padding: 0 0 0.1em 0;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.border {
+  border-bottom: 1px solid black;
 }
 </style>
 

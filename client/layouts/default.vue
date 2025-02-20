@@ -1,76 +1,103 @@
 <template>
-  <div id="tranzit-house">
-    <the-header />
+  <div id="tranzit">
+    <the-menu v-if="isMenuOpen"/>
+    <the-header/>
     <main>
-      <nuxt />
+      <nuxt/>
     </main>
   </div>
 </template>
 
 <script>
-import TheHeader from "@/components/TheHeader.vue";
+import TheMenu from '@/components/TheMenu.vue'
+import TheHeader from '@/components/TheHeader.vue'
 
 export default {
   components: {
+    TheMenu,
     TheHeader
   },
-  head() {
+  head () {
     return {
       title: this.$i18n.messages[this.$i18n.locale].tranzit.toUpperCase()
-    };
+    }
   },
-  mounted() {
-    this.setVh();
+  mounted () {
+    this.setVh()
 
-    window.addEventListener("resize", () => {
-      this.setVh();
-    });
+    window.addEventListener('resize', () => {
+      this.setVh()
+    })
+  },
+  computed: {
+    isMenuOpen: function () {
+      return this.$store.state.menu.open
+    }
   },
   methods: {
-    setVh: function() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    setVh: function () {
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${ vh }px`)
     }
   }
-};
+}
 </script>
 
 <style>
 /* global styles */
+@font-face {
+  font-family: "AnkaCoder-r";
+  src: url('~assets/AnkaCoder-r.ttf');
+}
+
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   height: 5px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: black;
 }
 
-html {
+:root {
+  --color-primary: rgba(232, 228, 232, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 13px;
+  padding: 0;
+}
+
+html {
+  font-family: "AnkaCoder-r", "Breite", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background: rgba(232, 228, 232, 1);
 }
 
 body {
-  margin: 0;
   scrollbar-width: 2px;
   scrollbar-color: black;
 }
 
-p {
-  font-size: 1.5em;
+p, ul, ol {
+  font-size: 1.1em;
+  font-family: "Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.3;
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 small {
@@ -115,8 +142,18 @@ img {
 }
 
 main {
-  position: absolute;
   width: 100%;
+  height: 95vh;
+}
+
+#tranzit {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .invert {
@@ -128,8 +165,13 @@ main {
 }
 
 .single {
-  margin: 3em 0 0 0;
   padding: 1em;
+  height: 95vh;
+  overflow-y: auto;
+}
+
+.single-no-padding {
+  padding: 0;
 }
 
 .single a {
@@ -153,9 +195,9 @@ main {
   background: white;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   body {
-    font-size: 18px;
+    font-size: 13px;
   }
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="single-index">
     <section v-if="loading" class="loading">
       <p>{{ $t('loading') }}</p>
     </section>
     <section
-      class="scroll-area"
+      class="scroll-area scroll-visual"
       ref="scrollVisual"
     >
       <area-visual/>
@@ -17,7 +17,7 @@
       />
     </section>
     <section
-      class="scroll-area invert"
+      class="scroll-area"
       ref="scrollEvents"
     >
       <area-events
@@ -26,7 +26,14 @@
       />
     </section>
     <section
-      class="scroll-area invert"
+      class="scroll-area"
+    >
+      <area-heading
+        site="archive"
+      />
+    </section>
+    <section
+      class="scroll-area"
     >
       <area-heading
         site="contact"
@@ -126,22 +133,25 @@ export default {
 </script>
 
 <style scoped>
+.single-index {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 95vh;
+}
+
 .scroll-area {
   box-sizing: border-box;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  /* height: calc(100vh / 6); */
-  height: calc(var(--vh) * 100 / 6);
-  background: white;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  flex: 1;
 }
 
-.scroll-area:nth-of-type(1) {
-  /* height: calc(100vh / 2); */
-  height: calc(var(--vh) * 100 / 2);
+.scroll-visual {
+  flex: 4;
 }
 
 .baseline {

@@ -1,7 +1,9 @@
 <template>
-  <div class="single single-contact indent">
-    <h1>{{ $t('contact.title') }}</h1>
-    <p v-html="$t('contact.p')"></p>
+  <div class="single single-contact ">
+    <div class="indent">
+      <h1>{{ $t('contact.title') }}</h1>
+      <p v-html="$t('contact.p')"></p>
+    </div>
   </div>
 </template>
 

@@ -13,18 +13,19 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "express": "^4.15.3",
-    "nuxt": "^1.4.5",
-    "strapi-sdk-javascript": "^0.3.1",
-    "vue-i18n": "^8.12.0",
+    "babel-runtime": "^6.26.0",
+    "express": "^4.17.1",
+    "nuxt": "^2.14.7",
+    "strapi-sdk-javascript": "^0.3.3",
+    "vue-i18n": "^8.22.2",
     "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
-    "cross-env": "^5.0.1",
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
-    "nodemon": "^1.11.0"
+    "cross-env": "^7.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.14.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^7.1.0",
+    "nodemon": "^2.0.6"
   }
 }

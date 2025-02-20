@@ -12,7 +12,6 @@ export default {
 
 <style scoped>
 .single-error {
-  margin: 3em 0 0 0;
   padding: 1em;
 }
 </style>

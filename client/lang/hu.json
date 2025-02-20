@@ -28,10 +28,26 @@
       "p": "<strong>Szervező:</strong> Tranzit Alapítvány <br> <strong>Partnerek:</strong> Babeș-Bolyai Tudományegyetem – Színházművészeti és Film Kar, Filmtett, EMKISZ, Kolozsvári Televízió – TVR Cluj, Minimum Party, Sapientia Erdélyi Magyar Tudományegyetem, Video Pontes, 50 éves a bukaresti Magyar Adás <br> <strong>Támogatók:</strong> AFCN, Bethlen Gábor Alapkezelő Zrt, Communitas Alapítvány <br><br> <strong>Kurátor:</strong> Könczei Csilla <br> <strong>Művészeti tanácsadó:</strong> Schneider Tibor <br> <strong>Szervezőcsapat:</strong> Csiki Réka, Emil Florea, Gondos Emőke, Magyari Noémi, Lorand Maxim, Schneider Bence, Seprődi Attila <br> <strong>Házigazdák/moderátorok:</strong> Csiki Réka, Gondos Emőke, Molnár Péter, Seprődi Attila <br><br> <strong>Helyszín:</strong> Tranzit Ház, Nagyterem, Stúdió, Tranzit udvar (Barițiu/Malom u. 16., bejárat a Névtelen utcáról) <br><br> Esős időben a nagyteremben vetítünk. A Tranzit Alapítvány fenntartja a műsorváltoztatás jogát. A belépés ingyenes."
     }]
   },
+  "archive": {
+    "title": "Archívum"
+  },
   "contact": {
     "title": "Kontakt",
-    "p": "<strong>Cím:</strong> Barițiu (Malom) utca, 16 szám, Kolozsvár, Románia, 400027 <br> <strong>Telefon:</strong> <a href='tel:+400746562775'>+40 074 656 277 5</a> <br> <strong>Email cím:</strong> <a href='mailto:tranzit.foundation@gmail.com'>tranzit.foundation@gmail.com</a> <br> <strong>Facebook:</strong> <a href='http://www.facebook.com/tranzith'>www.facebook.com/tranzith</a>"
+    "p": "<strong>Cím:</strong> Barițiu (Malom) utca, 16 szám, Kolozsvár, Románia, 400027 <br> <strong>Telefon:</strong> <a href='tel:+40737520854'>+40 737 520 854</a> <br> <strong>Email cím:</strong> <a href='mailto:tranzit.foundation@gmail.com'>tranzit.foundation@gmail.com</a> <br> <strong>Facebook:</strong> <a href='http://www.facebook.com/tranzith'>www.facebook.com/tranzith</a>"
   },
-  "error": "Az oldal nem található",
-  "loading": "Betöltés..."
+  "menu": {
+    "about": "Rólunk",
+    "contact": "Kontakt",
+    "archive": "Archívum"
+  },
+  "ui": {
+    "error": "Az oldal nem található",
+    "loading": "Betöltés...",
+    "menu": "Menü",
+    "close": "Bezár",
+    "search": "Keresés",
+    "event": "Esemény",
+    "project": "Projekt",
+    "gallery": "Galéria"
+  }
 }

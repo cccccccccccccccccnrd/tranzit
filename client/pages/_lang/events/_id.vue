@@ -1,21 +1,23 @@
 <template>
-  <div class="single single-event indent">
-    <section v-if="!event[`name_${ $i18n.locale }`]" class="loading invert">
-      <p>{{ $t('loading') }}</p>
-    </section>
-    <h2>{{ event[`name_${ $i18n.locale }`] }}</h2>
-    <small class="info">
-      <span class="type">{{ event[`type_${ $i18n.locale }`] }}</span> — {{ date }}
-    </small>
-    <vue-markdown
-      class="description"
-      :source="event[`description_${ $i18n.locale }`]"
-    />
-    <img
-      v-for="visual in event.media"
-      :key="visual.id"
-      :src="src(visual.url)"
-    />
+  <div class="single single-event">
+    <div class="indent">
+      <section v-if="!event[`name_${ $i18n.locale }`]" class="loading invert">
+        <p>{{ $t('loading') }}</p>
+      </section>
+      <h2>{{ event[`name_${ $i18n.locale }`] }}</h2>
+      <small class="info">
+        <span class="type">{{ event[`type_${ $i18n.locale }`] }}</span> — {{ date }}
+      </small>
+      <vue-markdown
+        class="description"
+        :source="event[`description_${ $i18n.locale }`]"
+      />
+      <img
+        v-for="visual in event.media"
+        :key="visual.id"
+        :src="src(visual.url)"
+      />
+    </div>
   </div>
 </template>
 
