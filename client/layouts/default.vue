@@ -1,38 +1,38 @@
 <template>
   <div id="tranzit-house">
-    <the-header/>
+    <the-header />
     <main>
-      <nuxt/>
+      <nuxt />
     </main>
   </div>
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader.vue'
+import TheHeader from "@/components/TheHeader.vue";
 
 export default {
   components: {
     TheHeader
   },
-  head () {
+  head() {
     return {
       title: this.$i18n.messages[this.$i18n.locale].tranzit.toUpperCase()
-    }
+    };
   },
-  mounted () {
-    this.setVh()
+  mounted() {
+    this.setVh();
 
-    window.addEventListener('resize', () => {
-      this.setVh()
-    })
+    window.addEventListener("resize", () => {
+      this.setVh();
+    });
   },
   methods: {
-    setVh: function () {
-      const vh = window.innerHeight * 0.01
-      document.documentElement.style.setProperty('--vh', `${ vh }px`)
+    setVh: function() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
     }
   }
-}
+};
 </script>
 
 <style>
@@ -48,7 +48,8 @@ export default {
 
 html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 13px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -69,7 +70,7 @@ p {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 small {

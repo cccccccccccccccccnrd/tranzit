@@ -1,11 +1,13 @@
 <template>
-  <nuxt-link :to="$i18n.path(`events/${ this.event.id }`)">
+  <nuxt-link :to="$i18n.path(`events/${this.event.id}`)">
     <div class="event">
       <section>
-        <small>{{ this.event[`name_${ $i18n.locale }`] }}</small>
+        <small>{{ this.event[`name_${$i18n.locale}`] }}</small>
       </section>
       <section>
-        <p>{{ this.date }}</p><p>↗</p>
+        <p v-if="this.event.type_en.startsWith('RomaRise')">2024–2026</p>
+        <p v-else>{{ this.date }}</p>
+        <p>↗</p>
       </section>
     </div>
   </nuxt-link>
@@ -13,20 +15,22 @@
 
 <script>
 export default {
-  props: ['event'],
+  props: ["event"],
   computed: {
-    date () {
-      const date = new Date(this.event.start)
+    date() {
+      const date = new Date(this.event.start);
       if (date.getHours() === 0 && date.getMinutes() === 0) {
-        return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() }`
+        return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
       } else {
-        return `${ date.getDate() }.${ date.getMonth() + 1 }.${ date.getFullYear() } ${ ('0' + date.getHours()).slice(-2) }:${ ('0' + date.getMinutes()).slice(-2) }`
+        return `${date.getDate()}.${date.getMonth() +
+          1}.${date.getFullYear()} ${("0" + date.getHours()).slice(-2)}:${(
+          "0" + date.getMinutes()
+        ).slice(-2)}`;
       }
     }
   }
-}
+};
 </script>
-
 
 <style scoped>
 a {
@@ -87,7 +91,8 @@ a:last-child .event {
 }
 
 @media (min-width: 800px) {
-  .event:hover, .event:active {
+  .event:hover,
+  .event:active {
     max-width: 800px;
     transform: translateY(5px);
   }
